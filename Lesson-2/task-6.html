@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .check {
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+        max-width: 300px;
+        margin: 0 auto;
+        padding: 25px;
+        color: rgb(57, 55, 55);
+      }
+
+      .check__title {
+        text-align: center;
+      }
+
+      .check__items {
+        padding-bottom: 20px;
+        border-bottom: 1px dashed rgb(57, 55, 55);
+      }
+
+      .check__item:not(:last-child) {
+        margin-bottom: 15px;
+      }
+
+      .item-check__line {
+        display: flex;
+        gap: 15px;
+        justify-content: space-between;
+      }
+
+      .check__footer {
+        padding-top: 20px;
+      }
+
+      p {
+        margin-bottom: 35px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Завдання 6</h1>
+
+    <p>
+      Задача 6. З клавіатури вводяться вартість товару та кількість одиниць 3
+      товарів. Обчислити вартість кожного товару окремо та загальну вартість.
+      Вивести чек (як у супермаркеті) використовуючи елементи розмітки.
+    </p>
+    <script>
+      //1.Вводимо необхідні дані для розв'язання завдання
+      let nameProduct1 = prompt("Введіть назву першого продукту");
+      let costProduct1 = parseFloat(prompt("Введіть вартість 1-го товару"));
+      let quantityGoods1 = parseInt(prompt("Введіть кількість 1-го товару"));
+      let nameProduct2 = prompt("Введіть назву другого продукту");
+      let costProduct2 = parseFloat(prompt("Введіть вартість 2-го товару"));
+      let quantityGoods2 = parseInt(prompt("Введіть кількість 2-го товару"));
+      let nameProduct3 = prompt("Введіть назву третього продукту");
+      let costProduct3 = parseFloat(prompt("Введіть вартість 3-го товару"));
+      let quantityGoods3 = parseInt(prompt("Введіть кількість 3-го товару"));
+      let costProductFirst, costProductSecond, costProductThird, sum;
+      // 2. Знаходимо результат
+      costProductFirst = costProduct1 / quantityGoods1; //за одиницю 1-го товару
+      costProductSecond = costProduct2 / quantityGoods2; //за одиницю 2-го товару
+      costProductThird = costProduct3 / quantityGoods3; //за одиницю 3-го товару
+      sum = costProduct1 + costProduct2 + costProduct3; // загальна сума
+
+      //3. Виводемо відповіді на екран
+      document.write(`
+		<div class="check">
+		<h3 class="check__title">Чек СільпоФуд</h3>
+		<div class="check__items">
+			<div class="check__item item-check">
+				<div class="item-check__line">
+					<div class="item-check__quantity">${quantityGoods1} <span>x</span></div>
+					<div class="item-check__price">${costProductFirst.toFixed(2)}</div>
+				</div>
+				<div class="item-check__line">
+					<div class="item-check__title">${nameProduct1}</div>
+					<div class="item-check__cost">${costProduct1.toFixed(2)}</div>
+				</div>
+			</div>
+			<div class="check__item item-check">
+				<div class="item-check__line">
+					<div class="item-check__quantity">${quantityGoods2} <span>x</span></div>
+					<div class="item-check__price">${costProductSecond.toFixed(2)}</div>
+				</div>
+				<div class="item-check__line">
+					<div class="item-check__title">${nameProduct2}</div>
+					<div class="item-check__cost">${costProduct2.toFixed(2)}</div>
+				</div>
+			</div>
+			<div class="check__item item-check">
+				<div class="item-check__line">
+					<div class="item-check__quantity">${quantityGoods3} <span>x</span></div>
+					<div class="item-check__price">${costProductThird.toFixed(2)}</div>
+				</div>
+				<div class="item-check__line">
+					<div class="item-check__title">${nameProduct3}</div>
+					<div class="item-check__cost">${costProductThird.toFixed(2)}</div>
+				</div>
+			</div>
+		</div>
+		<div class="check__footer">
+			<div class="check__item item-check">
+				<div class="item-check__line">
+					<div class="item-check__title">Сумма</div>
+					<div class="item-check__cost"><strong>${sum.toFixed(2)}</strong></div>
+				</div>
+			</div>
+		</div>
+	</div>
+		`);
+    </script>
+  </body>
+</html>

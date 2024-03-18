@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Завдання 1</h1>
+
+    <p>
+      Задача 1. Знайти суму, добуток та частку двох дійсних чисел. Результат вивести у формі таблиці
+    </p>
+    <script>
+      //1.Вводимо необхідні дані для розв'язання завдання
+      let a = parseInt(prompt("Введіть значення а"));
+      let b = parseInt(prompt("Введіть значення b"));
+    
+      let S1, S2, S3
+      // 2. Знаходимо результат
+      S1 = a + b;
+      S2 = a*b
+      S3 = a/b
+      
+      //3. Виводемо відповіді на екран
+      document.write('<table border="2px">');
+         document.write('<tr>');
+            document.write('<td>');
+               document.write(S1);       
+            document.write('</td>');
+            document.write('<td>');
+               document.write(S2);       
+            document.write('</td>');
+            document.write('<td>');
+               document.write(S3.toFixed(2));       
+            document.write('</td>');
+         document.write('</tr>');
+      document.write('</table>');
+    </script>
+  </body>
+</html>

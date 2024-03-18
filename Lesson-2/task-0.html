@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Завдання 0</h1>
+
+    <p>
+      Задача 0. Обчислити значення виразів S1=a+12+b S2=√(((a+b)/2a) )
+      S3=∛((a+b)c) S4=sin⁡(a/(-b))
+    </p>
+    <script>
+      //1.Вводимо необхідні дані для розв'язання завдання
+      let a = parseInt(prompt("Введіть значення а"));
+      let b = parseInt(prompt("Введіть значення b"));
+      let c = parseInt(prompt("Введіть значення c"));
+      let S1, S2, S3, S4;
+      // 2. Знаходимо результат
+      S1 = a + 12 + b;
+      S2 = Math.sqrt((a + b) / (2 * a));
+      S3 = Math.cbrt((a + b) * c);
+      S4 = Math.sin(a / -b);
+      //3. Виводемо відповіді на екран
+      document.write(S1);
+      document.write("<br>");
+      document.write(S2.toFixed(2));
+      document.write("<br>");
+      document.write(S3.toFixed(2));
+      document.write("<br>");
+      document.write(S4.toFixed(2));
+    </script>
+  </body>
+</html>
